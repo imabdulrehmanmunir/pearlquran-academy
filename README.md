@@ -1,2 +1,9 @@
-# quranpearl-academy
-The Quranic Pearl – A high-performance, mobile-first landing page for an online Quran Academy. Built with vanilla HTML5/CSS3/JS, featuring Zoom/WhatsApp integration, automated lead-to-WhatsApp form handling, and optimized for a premium educational experience.
+#The Quranic Pearl: Online EdTech Landing Page
+
+A bespoke, single-page web application designed for online Islamic education. This project focuses on high conversion rates for independent tutors, utilizing a seamless JavaScript-based form that translates user inputs directly into formatted WhatsApp API queries.
+
+Performance: Lightweight, zero-dependency codebase.
+
+UX: Mobile-first design with smooth scroll animations and sticky navigation.
+
+Features: Dynamic course catalog, automated lead generation, and multi-platform (Zoom/WhatsApp) session CTAs.
