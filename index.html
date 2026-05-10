@@ -13,7 +13,6 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0F2340" />
     
-    <!-- FIX: Removed the double slash at the end of the URL -->
     <link rel="canonical" href="https://pearlquran-academy.vercel.app/" />
 
     <!-- ═══ OPEN GRAPH (Facebook/WhatsApp/LinkedIn) ═══ -->
@@ -21,7 +20,8 @@
     <meta property="og:url" content="https://pearlquran-academy.vercel.app/" />
     <meta property="og:title" content="PearlQuran Academy - Online Quran Classes for Sisters & Kids" />
     <meta property="og:description" content="Learn Quran online with a certified female tutor. Hifz, Tajweed, Nazra & more. Begin with 2-3 FREE trial classes. Safe, private & professional." />
-    <meta property="og:image" content="https://pearlquran-academy.vercel.app/pearlquran academy hero.jpeg" />
+    <!-- FIX: URL encoded spaces so link previews work on WhatsApp -->
+    <meta property="og:image" content="https://pearlquran-academy.vercel.app/pearlquran%20academy%20hero.jpeg" />
     <meta property="og:site_name" content="PearlQuran Academy" />
     <meta property="og:locale" content="en_US" />
 
@@ -32,7 +32,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="PearlQuran Academy - Online Quran Classes" />
     <meta name="twitter:description" content="Certified female Quran tutor. Hifz, Tajweed, Nazra & more. Start with FREE trial classes." />
-    <meta name="twitter:image" content="https://pearlquran-academy.vercel.app/pearlquran academy hero.jpeg" />
+    <!-- FIX: URL encoded spaces -->
+    <meta name="twitter:image" content="https://pearlquran-academy.vercel.app/pearlquran%20academy%20hero.jpeg" />
 
     <!-- ═══ GEO / LOCAL SEO ═══ -->
     <meta name="geo.region" content="PK" />
@@ -59,26 +60,40 @@
       }
     </script>
 
+    <!-- ═══ PRECONNECT (Speeds up external connections) ═══ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
     <!-- ═══ FONTS & CSS ═══ -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- FIX: Asynchronous loading for FontAwesome -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    </noscript>
+
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
-  <body>
+<body>
     <div class="cursor" id="cursor"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
     <!-- NAV -->
     <nav id="navbar">
-      <a href="#" class="nav-logo">
+      <a href="#" class="nav-logo" aria-label="PearlQuran Academy Home">
         <div class="nav-logo-icon"><i class="fas fa-book"></i></div>
         <div class="nav-logo-text">
           <span>PearlQuran Academy</span>
           <span>Online Quran Classes</span>
         </div>
       </a>
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle Navigation">
         <span></span><span></span><span></span>
       </div>
       <ul class="nav-links" id="navLinks">
@@ -98,15 +113,12 @@
       <div class="hero-arc2"></div>
       <div class="hero-content">
         <div class="hero-text">
-          <span class="hero-bismillah"
-            >بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span
-          >
+          <span class="hero-bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
           <div class="hero-badge">
-            <i class="fas fa-certificate"></i> Online Quran Academy for Sisters
-            &amp; Kids
+            <i class="fas fa-certificate"></i> Online Quran Academy for Sisters &amp; Kids
           </div>
           <h1 class="hero-title">
-            Enlighten Your Heart<br />with <em>PearlQuran</em><br />& Academy
+            Enlighten Your Heart<br />with <em>PearlQuran</em><br />Academy
           </h1>
           <p class="hero-sub">
             Learn Quran online via Zoom &amp; WhatsApp with a highly qualified,
@@ -115,12 +127,8 @@
             blessings.
           </p>
           <div class="hero-actions">
-            <a href="#enroll" class="btn-gold"
-              ><i class="fas fa-user-plus"></i> Enroll for Free Trial</a
-            >
-            <a href="#courses" class="btn-white-ghost"
-              ><i class="fas fa-book-open"></i> View Courses</a
-            >
+            <a href="#enroll" class="btn-gold"><i class="fas fa-user-plus"></i> Enroll for Free Trial</a>
+            <a href="#courses" class="btn-white-ghost"><i class="fas fa-book-open"></i> View Courses</a>
           </div>
           <div class="hero-trust">
             <div class="htrust">
@@ -128,8 +136,7 @@
             </div>
             <div class="hdiv"></div>
             <div class="htrust">
-              <i class="fas fa-graduation-cap"></i
-              ><span>100% Private & Online</span>
+              <i class="fas fa-graduation-cap"></i><span>100% Private & Online</span>
             </div>
             <div class="hdiv"></div>
             <div class="htrust">
@@ -166,44 +173,22 @@
     <!-- MARQUEE -->
     <div class="mqwrap">
       <div class="mqtrack">
-        <div class="mqitem">
-          <i class="fas fa-book-quran"></i> Tajweed & Qirat
-        </div>
+        <div class="mqitem"><i class="fas fa-book-quran"></i> Tajweed & Qirat</div>
         <div class="mqitem"><i class="fas fa-mosque"></i> Islamic Studies</div>
-        <div class="mqitem">
-          <i class="fas fa-certificate"></i>Al-Daqaiq ul-Tajweediyyah
-        </div>
-        <div class="mqitem">
-          <i class="fas fa-graduation-cap"></i>Live Online Sessions
-        </div>
+        <div class="mqitem"><i class="fas fa-certificate"></i>Al-Daqaiq ul-Tajweediyyah</div>
+        <div class="mqitem"><i class="fas fa-graduation-cap"></i>Live Online Sessions</div>
         <div class="mqitem"><i class="fas fa-video"></i> Hifz ul-Quran</div>
         <div class="mqitem"><i class="fas fa-star"></i> 8 Years Experience</div>
-        <div class="mqitem">
-          <i class="fas fa-map-marker-alt"></i> 100% Online
-        </div>
-        <div class="mqitem">
-          <i class="fas fa-globe"></i> Worldwide Students
-        </div>
-        <div class="mqitem">
-          <i class="fas fa-book-quran"></i> Quran Classes
-        </div>
+        <div class="mqitem"><i class="fas fa-map-marker-alt"></i> 100% Online</div>
+        <div class="mqitem"><i class="fas fa-globe"></i> Worldwide Students</div>
+        <div class="mqitem"><i class="fas fa-book-quran"></i> Quran Classes</div>
         <div class="mqitem"><i class="fas fa-mosque"></i> 100% Online</div>
-        <div class="mqitem">
-          <i class="fas fa-certificate"></i> 5 Courses Offered
-        </div>
-        <div class="mqitem">
-          <i class="fas fa-graduation-cap"></i> Tajweed & Qirat
-        </div>
-        <div class="mqitem">
-          <i class="fas fa-video"></i> Live Online Sessions
-        </div>
+        <div class="mqitem"><i class="fas fa-certificate"></i> 5 Courses Offered</div>
+        <div class="mqitem"><i class="fas fa-graduation-cap"></i> Tajweed & Qirat</div>
+        <div class="mqitem"><i class="fas fa-video"></i> Live Online Sessions</div>
         <div class="mqitem"><i class="fas fa-star"></i> 8 Years Experience</div>
-        <div class="mqitem">
-          <i class="fas fa-map-marker-alt"></i> 100% Private
-        </div>
-        <div class="mqitem">
-          <i class="fas fa-globe"></i> Worldwide Students
-        </div>
+        <div class="mqitem"><i class="fas fa-map-marker-alt"></i> 100% Private</div>
+        <div class="mqitem"><i class="fas fa-globe"></i> Worldwide Students</div>
       </div>
     </div>
 
@@ -217,7 +202,7 @@
           />
           <div class="about-img-overlay"></div>
           <div class="about-caption">
-            <h3>PearlQuran Academy</h3>
+            <span style="font-size: 1.25rem; font-weight: bold; display: block; margin-bottom: 5px;">PearlQuran Academy</span>
             <span>Certified Quran Educator</span>
           </div>
         </div>
@@ -229,8 +214,7 @@
       <div>
         <div class="section-tag reveal">Meet Your Teacher</div>
         <h2 class="section-title reveal d1">
-          Guided by Knowledge,
-Driven   <em>by</em> Faith
+          Guided by Knowledge, Driven <em>by</em> Faith
         </h2>
         <div class="green-line reveal d1"></div>
         <p class="section-sub reveal d2">
@@ -243,21 +227,11 @@ Driven   <em>by</em> Faith
           </p>
         </div>
         <div class="about-qual reveal d3">
-          <div class="qual-chip">
-            <i class="fas fa-certificate"></i> Al-Daqaiq ul-Tajweediyyah
-          </div>
-          <div class="qual-chip">
-            <i class="fas fa-graduation-cap"></i> Tajweed & Qirat
-          </div>
-          <div class="qual-chip">
-            <i class="fas fa-chalkboard-teacher"></i> Hifz ul-Quran
-          </div>
-          <div class="qual-chip">
-            <i class="fas fa-map-marker-alt"></i> Remote
-          </div>
-          <div class="qual-chip">
-            <i class="fas fa-video"></i> Online Classes
-          </div>
+          <div class="qual-chip"><i class="fas fa-certificate"></i> Al-Daqaiq ul-Tajweediyyah</div>
+          <div class="qual-chip"><i class="fas fa-graduation-cap"></i> Tajweed & Qirat</div>
+          <div class="qual-chip"><i class="fas fa-chalkboard-teacher"></i> Hifz ul-Quran</div>
+          <div class="qual-chip"><i class="fas fa-map-marker-alt"></i> Remote</div>
+          <div class="qual-chip"><i class="fas fa-video"></i> Online Classes</div>
         </div>
       </div>
     </section>
@@ -266,20 +240,16 @@ Driven   <em>by</em> Faith
     <section id="stats">
       <div class="stats-grid">
         <div class="stat-box reveal">
-          <span class="stat-num" data-target="50">0</span
-          ><span class="stat-lbl">Happy Students</span>
+          <span class="stat-num" data-target="50">0</span><span class="stat-lbl">Happy Students</span>
         </div>
         <div class="stat-box reveal d1">
-          <span class="stat-num" data-target="8">0</span
-          ><span class="stat-lbl">Years Teaching</span>
+          <span class="stat-num" data-target="8">0</span><span class="stat-lbl">Years Teaching</span>
         </div>
         <div class="stat-box reveal d2">
-          <span class="stat-num" data-target="5">0</span
-          ><span class="stat-lbl">Courses Offered</span>
+          <span class="stat-num" data-target="5">0</span><span class="stat-lbl">Courses Offered</span>
         </div>
         <div class="stat-box reveal d3">
-          <span class="stat-num" data-target="100">0</span
-          ><span class="stat-lbl">% Online & Flexible</span>
+          <span class="stat-num" data-target="100">0</span><span class="stat-lbl">% Online & Flexible</span>
         </div>
       </div>
     </section>
@@ -301,10 +271,7 @@ Driven   <em>by</em> Faith
         <div class="course-card reveal" data-cat="quran">
           <div class="course-num">01</div>
           <div class="course-img">
-            <img
-              src="pearlquran-academy-course1.jpg"
-              alt="pearlquran academy website course1"
-            />
+            <img src="pearlquran-academy-course1.jpg" alt="pearlquran academy website course1" />
             <div class="course-level level-beg">Memorization</div>
           </div>
           <div class="course-body">
@@ -313,19 +280,12 @@ Driven   <em>by</em> Faith
               Embark on the sacred journey of memorizing the Holy Quran with structured lesson plans, consistent revision schedules, and compassionate one-on-one guidance.
             </p>
             <div class="course-meta">
-              <div class="cmeta">
-                <i class="fas fa-clock"></i> 45 min / class
-              </div>
-              <div class="cmeta">
-                <i class="fas fa-calendar"></i> 5 days/week
-              </div>
+              <div class="cmeta"><i class="fas fa-clock"></i> 45 min / class</div>
+              <div class="cmeta"><i class="fas fa-calendar"></i> 5 days/week</div>
             </div>
             <div class="course-footer">
               <div class="course-price">Free Trial</div>
-              <button
-                class="course-enroll"
-                onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})"
-              >
+              <button class="course-enroll" onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})">
                 <i class="fas fa-arrow-right"></i> Enroll
               </button>
             </div>
@@ -341,25 +301,15 @@ Driven   <em>by</em> Faith
           <div class="course-body">
             <h3>Tajweed — Correct Pronunciation</h3>
             <p>
-              Explore the rich history of Islam along with inspiring Majalis
-              sessions. Learn about the lives of Prophets, Ahlul Bayt (A.S.),
-              important Islamic events, sacrifices, and lessons that strengthen
-              faith and character.
+              Explore the rich history of Islam along with inspiring Majalis sessions. Learn about the lives of Prophets, Ahlul Bayt (A.S.), important Islamic events, sacrifices, and lessons that strengthen faith and character.
             </p>
             <div class="course-meta">
-              <div class="cmeta">
-                <i class="fas fa-clock"></i> 50 min / class
-              </div>
-              <div class="cmeta">
-                <i class="fas fa-calendar"></i> 3 days/week
-              </div>
+              <div class="cmeta"><i class="fas fa-clock"></i> 50 min / class</div>
+              <div class="cmeta"><i class="fas fa-calendar"></i> 3 days/week</div>
             </div>
             <div class="course-footer">
               <div class="course-price">Ask for Fee</div>
-              <button
-                class="course-enroll"
-                onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})"
-              >
+              <button class="course-enroll" onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})">
                 <i class="fas fa-arrow-right"></i> Enroll
               </button>
             </div>
@@ -378,19 +328,12 @@ Driven   <em>by</em> Faith
               Learn to read the Quran fluently from the Mushaf with proper letter recognition and pronunciation — ideal for beginners and those seeking to improve their reading.
             </p>
             <div class="course-meta">
-              <div class="cmeta">
-                <i class="fas fa-clock"></i> 60 min / class
-              </div>
-              <div class="cmeta">
-                <i class="fas fa-calendar"></i> 6 days/week
-              </div>
+              <div class="cmeta"><i class="fas fa-clock"></i> 60 min / class</div>
+              <div class="cmeta"><i class="fas fa-calendar"></i> 6 days/week</div>
             </div>
             <div class="course-footer">
               <div class="course-price">Ask for Fee</div>
-              <button
-                class="course-enroll"
-                onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})"
-              >
+              <button class="course-enroll" onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})">
                 <i class="fas fa-arrow-right"></i> Enroll
               </button>
             </div>
@@ -409,19 +352,12 @@ Driven   <em>by</em> Faith
               Understand the divine message through word-by-word and verse-by-verse translation, deepening your personal connection with the Book of Allah.
             </p>
             <div class="course-meta">
-              <div class="cmeta">
-                <i class="fas fa-clock"></i> 50 min / class
-              </div>
-              <div class="cmeta">
-                <i class="fas fa-book"></i> Board Syllabus
-              </div>
+              <div class="cmeta"><i class="fas fa-clock"></i> 50 min / class</div>
+              <div class="cmeta"><i class="fas fa-book"></i> Board Syllabus</div>
             </div>
             <div class="course-footer">
               <div class="course-price">Ask for Fee</div>
-              <button
-                class="course-enroll"
-                onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})"
-              >
+              <button class="course-enroll" onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})">
                 <i class="fas fa-arrow-right"></i> Enroll
               </button>
             </div>
@@ -440,25 +376,17 @@ Driven   <em>by</em> Faith
               Learn the essential daily supplications from the Sunnah — for morning, evening, sleep, meals, and daily routines — to enrich your everyday spiritual practice.
             </p>
             <div class="course-meta">
-              <div class="cmeta">
-                <i class="fas fa-clock"></i> 40 min / class
-              </div>
-              <div class="cmeta">
-                <i class="fas fa-calendar"></i> 2 days/week
-              </div>
+              <div class="cmeta"><i class="fas fa-clock"></i> 40 min / class</div>
+              <div class="cmeta"><i class="fas fa-calendar"></i> 2 days/week</div>
             </div>
             <div class="course-footer">
               <div class="course-price">Ask for Fee</div>
-              <button
-                class="course-enroll"
-                onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})"
-              >
+              <button class="course-enroll" onclick="document.getElementById('enroll').scrollIntoView({behavior:'smooth'})">
                 <i class="fas fa-arrow-right"></i> Enroll
               </button>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -479,7 +407,7 @@ Driven   <em>by</em> Faith
             <div class="how-step reveal d1">
               <div class="step-num">1</div>
               <div>
-                <h4>Fill the Enrollment Form</h4>
+                <h3>Fill the Enrollment Form</h3>
                 <p>
                   Share your name, WhatsApp number, and the course you're
                   interested in. We'll get back to you within a few hours.
@@ -489,7 +417,7 @@ Driven   <em>by</em> Faith
             <div class="how-step reveal d2">
               <div class="step-num">2</div>
               <div>
-                <h4>Free Trial Class</h4>
+                <h3>Free Trial Class</h3>
                 <p>
                   Your first class is completely free! Experience the teaching
                   style, ask questions, and decide if it's the right fit for
@@ -500,7 +428,7 @@ Driven   <em>by</em> Faith
             <div class="how-step reveal d3">
               <div class="step-num">3</div>
               <div>
-                <h4>Schedule Your Slot</h4>
+                <h3>Schedule Your Slot</h3>
                 <p>
                   Choose a time that works best for you — morning, afternoon, or
                   evening. Flexible timing for all students worldwide.
@@ -510,7 +438,7 @@ Driven   <em>by</em> Faith
             <div class="how-step reveal d4">
               <div class="step-num">4</div>
               <div>
-                <h4>Learn via Zoom / WhatsApp</h4>
+                <h3>Learn via Zoom / WhatsApp</h3>
                 <p>
                   Live one-on-one or group sessions on Zoom, Skype, or WhatsApp
                   video call. No downloads, no hassle — just click and join.
@@ -557,7 +485,7 @@ Driven   <em>by</em> Faith
           <div class="tauthor">
             <img
               class="tavatar"
-              src="https://images.unsplash.com/photo-1608094767786-995d48b0052a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGZlbWFsZSUyMHBsYWNlaG9sZGVyfGVufDB8fDB8fHww"
+              src="https://images.unsplash.com/photo-1608094767786-995d48b0052a?w=500&auto=format&fit=crop&q=60"
               alt="Parent"
             />
             <div>
@@ -565,9 +493,7 @@ Driven   <em>by</em> Faith
               <div class="trole">Hifz Student</div>
             </div>
             <div class="tstars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
           </div>
         </div>
@@ -580,7 +506,7 @@ Driven   <em>by</em> Faith
           <div class="tauthor">
             <img
               class="tavatar"
-              src="https://images.unsplash.com/photo-1608094767786-995d48b0052a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGZlbWFsZSUyMHBsYWNlaG9sZGVyfGVufDB8fDB8fHww"
+              src="https://images.unsplash.com/photo-1608094767786-995d48b0052a?w=500&auto=format&fit=crop&q=60"
               alt="Parent"
             />
             <div>
@@ -588,9 +514,7 @@ Driven   <em>by</em> Faith
               <div class="trole">Tajweed Student</div>
             </div>
             <div class="tstars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
           </div>
         </div>
@@ -603,7 +527,7 @@ Driven   <em>by</em> Faith
           <div class="tauthor">
             <img
               class="tavatar"
-              src="https://images.unsplash.com/photo-1608094767786-995d48b0052a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGZlbWFsZSUyMHBsYWNlaG9sZGVyfGVufDB8fDB8fHww"
+              src="https://images.unsplash.com/photo-1608094767786-995d48b0052a?w=500&auto=format&fit=crop&q=60"
               alt="Student"
             />
             <div>
@@ -611,9 +535,7 @@ Driven   <em>by</em> Faith
               <div class="trole">Tarjma Course Student</div>
             </div>
             <div class="tstars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
           </div>
         </div>
@@ -630,12 +552,7 @@ Driven   <em>by</em> Faith
           <h2 class="section-title reveal d1" style="color: white">
             Enroll Today —<br /><em>First Class Free</em>
           </h2>
-          <div
-            class="green-line reveal d1"
-            style="
-              background: linear-gradient(90deg, var(--gold), var(--gold-lt));
-            "
-          ></div>
+          <div class="green-line reveal d1" style="background: linear-gradient(90deg, var(--gold), var(--gold-lt));"></div>
           <p class="section-sub reveal d2">
             Fill the form and we'll contact you within a few hours to confirm
             your free trial class. No commitment, no pressure — just pure
@@ -645,16 +562,11 @@ Driven   <em>by</em> Faith
             <div class="einfo-item reveal d1">
               <div class="einfo-icon"><i class="fab fa-whatsapp"></i></div>
               <div>
-                <span>WhatsApp</span
-                ><a href="https://wa.me/923013194465"
-                  >PearlQuran Academy</a
-                >
+                <span>WhatsApp</span><a href="https://wa.me/923013194465">PearlQuran Academy</a>
               </div>
             </div>
             <div class="einfo-item reveal d2">
-              <div class="einfo-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
+              <div class="einfo-icon"><i class="fas fa-map-marker-alt"></i></div>
               <div>
                 <span>Location</span>
                 <p>Remote</p>
@@ -669,13 +581,9 @@ Driven   <em>by</em> Faith
             </div>
           </div>
           <div class="platforms reveal d3">
-            <div class="platform-chip">
-              <i class="fab fa-whatsapp"></i> WhatsApp
-            </div>
+            <div class="platform-chip"><i class="fab fa-whatsapp"></i> WhatsApp</div>
             <div class="platform-chip"><i class="fas fa-video"></i> Zoom</div>
-            <div class="platform-chip">
-              <i class="fas fa-globe"></i> Worldwide
-            </div>
+            <div class="platform-chip"><i class="fas fa-globe"></i> Worldwide</div>
           </div>
         </div>
         <div class="enroll-form reveal d2">
@@ -683,25 +591,17 @@ Driven   <em>by</em> Faith
             <h3>Book Your Free Trial 📖</h3>
             <div class="form-row2">
               <div class="form-g">
-                <label>Student Name</label>
-                <input
-                  type="text"
-                  id="studentName"
-                  placeholder="Your / child's name"
-                />
+                <label for="studentName">Student Name</label>
+                <input type="text" id="studentName" placeholder="Your / child's name" />
               </div>
               <div class="form-g">
-                <label>WhatsApp Number</label>
-                <input
-                  type="tel"
-                  id="studentWhatsapp"
-                  placeholder="+92 300 0000000"
-                />
+                <label for="studentWhatsapp">WhatsApp Number</label>
+                <input type="tel" id="studentWhatsapp" placeholder="+92 300 0000000" />
               </div>
             </div>
             <div class="form-g">
-              <label>Course Interested In</label>
-              <select id="studentCourse">
+              <label for="studentCourse">Course Interested In</label>
+              <select id="studentCourse" aria-label="Select a Course">
                 <option>Select a Course</option>
                 <option>Quran Nazra (Reading)</option>
                 <option>Tajweed ul Quran</option>
@@ -712,23 +612,20 @@ Driven   <em>by</em> Faith
             </div>
             <div class="form-row2">
               <div class="form-g">
-                <label>Student Age</label>
+                <label for="studentAge">Student Age</label>
                 <input type="text" id="studentAge" placeholder="e.g. 8 years" />
               </div>
               <div class="form-g">
-                <label>Preferred Platform</label>
-                <select id="studentPlatform">
+                <label for="studentPlatform">Preferred Platform</label>
+                <select id="studentPlatform" aria-label="Select a Platform">
                   <option>WhatsApp Video</option>
                   <option>Zoom</option>
                 </select>
               </div>
             </div>
             <div class="form-g">
-              <label>Any Message (Optional)</label>
-              <textarea
-                id="studentMessage"
-                placeholder="Tell us anything — current level, preferred timing, or any questions..."
-              ></textarea>
+              <label for="studentMessage">Any Message (Optional)</label>
+              <textarea id="studentMessage" placeholder="Tell us anything — current level, preferred timing, or any questions..."></textarea>
             </div>
             <button class="enroll-btn" onclick="submitEnroll()">
               <i class="fas fa-paper-plane"></i> &nbsp; Request Free Trial Class
@@ -751,7 +648,7 @@ Driven   <em>by</em> Faith
     <footer>
       <div class="footer-grid">
         <div class="foot-brand">
-          <a href="#" class="nav-logo" style="text-decoration: none">
+          <a href="#" class="nav-logo" style="text-decoration: none" aria-label="PearlQuran Academy Home">
             <div class="nav-logo-icon"><i class="fas fa-book-open"></i></div>
             <div class="nav-logo-text">
               <span style="color: white">PearlQuran Academy</span>
@@ -762,14 +659,14 @@ Driven   <em>by</em> Faith
             A premium online Quran academy providing authentic Islamic education for sisters and children in a safe, private, and nurturing digital environment. 🌿
           </p>
           <div class="foot-social">
-            <a href="#" class="fsoc"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="fsoc"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="fsoc"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="fsoc"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="fsoc" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="fsoc" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="fsoc" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="fsoc" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
         <div class="foot-col">
-          <h4>Quick Links</h4>
+          <h3>Quick Links</h3>
           <ul>
             <li><a href="#about">About PearlQuran Academy</a></li>
             <li><a href="#courses">Our Courses</a></li>
@@ -779,7 +676,7 @@ Driven   <em>by</em> Faith
           </ul>
         </div>
         <div class="foot-col">
-          <h4>Courses</h4>
+          <h3>Courses</h3>
           <ul>
             <li><a href="#">Quran Hifz </a></li>
             <li><a href="#">Tajweed ul Quran</a></li>
@@ -789,11 +686,9 @@ Driven   <em>by</em> Faith
           </ul>
         </div>
         <div class="foot-col">
-          <h4>Contact</h4>
+          <h3>Contact</h3>
           <ul>
-            <li>
-              <a href="https://wa.me/923013194465">WhatsApp +92 301 3194465</a>
-            </li>
+            <li><a href="https://wa.me/923013194465">WhatsApp +92 301 3194465</a></li>
             <li><a href="#">Remote</a></li>
             <li><a href="#">Pakistan</a></li>
             <li><a href="#">Flexible Timings</a></li>
@@ -803,42 +698,25 @@ Driven   <em>by</em> Faith
       </div>
       <div class="foot-bottom">
         <p>
-          © 2025 <span>PearlQuran Academy</span>. All
-          Rights Reserved.
+          © 2025 <span>PearlQuran Academy</span>. All Rights Reserved.
         </p>
         <p style="font-size: 11px; color: rgba(255, 255, 255, 0.18)">
           PearlQuran Academy · Online Quran Tutor
         </p>
         <!-- GROWTH LIFT DIGITAL CREDIT -->
-        <p
-          style="
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 15px;
-          "
-        >
+        <p style="font-size: 14px; color: rgba(255, 255, 255, 0.7); margin-top: 15px;">
           Designed & Developed by
-          <a
-            href="https://growthlift-digital.vercel.app/"
-            target="_blank"
-            style="
-              color: #d4af37;
-              text-decoration: none;
-              font-weight: bold;
-              letter-spacing: 0.5px;
-            "
-          >
+          <a href="https://growthlift-digital.vercel.app/" target="_blank" style="color: #d4af37; text-decoration: none; font-weight: bold; letter-spacing: 0.5px;">
             Growth Lift Digital
           </a>
         </p>
       </div>
     </footer>
 
-    <a href="https://wa.me/923013194465" class="wafloat" target="_blank"
-      ><i class="fab fa-whatsapp"></i
-    ></a>
+    <a href="https://wa.me/923013194465" class="wafloat" target="_blank" aria-label="Chat with us on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <script src="script.js"></script>
- 
+    <script src="script.js" defer></script>
   </body>
 </html>
